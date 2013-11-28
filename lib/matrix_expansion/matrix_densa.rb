@@ -48,9 +48,9 @@ class MatrizDensa<Matriz
       
       aux=Matriz.new(@col,@fil)
       i=0
-      while i<@fil
+      self.fil.times do |i|
 	   j=0
-	  while j<@col
+	  self.col.times do |j|
 	    aux[i][j]= valor[i][j] + other.get(i,j)
 	    j=j+1
 	  end
@@ -90,9 +90,9 @@ class MatrizDensa<Matriz
        aux=Matriz.new(@col,@fil)
       i=0
      
-	while i<@fil
+	self.fil.times do |i|
 	   j=0
-	  while j<@col
+	  self.col.times do |j|
 	    aux[i][j]= valor[i][j] - other.get(i,j)
 	    j=j+1
 	  end
@@ -130,9 +130,9 @@ class MatrizDensa<Matriz
    def min
        min = @valor[0][0]
        i = 0
-        while (i < @fil)
+       self.fil.times do |i|
             j = 0
-            while (j < @col)
+            self.col.times do |j|
                if (@valor[i][j] < min)
                    min = @valor[i][j]
                 end

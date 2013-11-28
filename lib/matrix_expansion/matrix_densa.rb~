@@ -113,9 +113,9 @@ class MatrizDensa<Matriz
     def max
       max = @valor[0][0]
       i=0
-	while (i<@fil)
+	self.fil.times do |i|
 	  j=0
-	  while (j<@col)
+	  self.col.times do |j|
 	      if (@valor[i][j] > max)
 		  max= @valor[i][j]
 	      end
