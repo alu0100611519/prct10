@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>fraccion.rb~ - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../../index.html">Home</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../../Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="../../Guardfile~.html">Guardfile~</a>
+  
+    <li class="file"><a href="../../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../../README_md.html">README</a>
+  
+    <li class="file"><a href="../../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../../Rakefile~.html">Rakefile~</a>
+  
+    <li class="file"><a href="../../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../../lib/matrix_expansion_rb~.html">matrix_expansion.rb~</a>
+  
+    <li class="file"><a href="../../lib/matrix_expansion/fraccion_rb_save.html">fraccion.rb.save</a>
+  
+    <li class="file"><a href="../../lib/matrix_expansion/fraccion_rb~.html">fraccion.rb~</a>
+  
+    <li class="file"><a href="../../lib/matrix_expansion/matrix_rb~.html">matrix.rb~</a>
+  
+    <li class="file"><a href="../../lib/matrix_expansion/matrix_densa_rb~.html">matrix_densa.rb~</a>
+  
+    <li class="file"><a href="../../lib/matrix_expansion/matrix_dispersa_rb~.html">matrix_dispersa.rb~</a>
+  
+    <li class="file"><a href="../../matrix_expansion_gemspec.html">matrix_expansion.gemspec</a>
+  
+    <li class="file"><a href="../../spec/matrix_spec_rb~.html">matrix_spec.rb~</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../Fraccion.html">Fraccion</a>
+  
+    <li><a href="../../MatrixExpansion.html">MatrixExpansion</a>
+  
+    <li><a href="../../MatrixExpansion/Matriz.html">MatrixExpansion::Matriz</a>
+  
+    <li><a href="../../MatrixExpansion/MatrizDensa.html">MatrixExpansion::MatrizDensa</a>
+  
+    <li><a href="../../MatrixExpansion/MatrizDispersa.html">MatrixExpansion::MatrizDispersa</a>
+  
+    <li><a href="../../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>include Comparable class <a href="../../Fraccion.html">Fraccion</a></p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span> (<span class="ruby-identifier">numerador</span>, <span class="ruby-identifier">denominador</span>)
+  <span class="ruby-ivar">@num</span>,<span class="ruby-ivar">@den</span> = <span class="ruby-identifier">numerador</span>,<span class="ruby-identifier">denominador</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">to_s</span>
+    <span class="ruby-node">&quot;(#{@num}/#{@den})&quot;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>################################ METODO COERCE
+####################################################</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">coerce</span>(<span class="ruby-identifier">other</span>)
+  [<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">other</span>,<span class="ruby-value">1</span>),<span class="ruby-keyword">self</span>]
+  <span class="ruby-keyword">end</span>
+</pre>
+
+<p>##################################################################################################</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">reduccion</span>
+  <span class="ruby-identifier">com_div</span> = <span class="ruby-identifier">gcd</span>(<span class="ruby-ivar">@num</span>,<span class="ruby-ivar">@den</span>)
+  <span class="ruby-ivar">@num</span>=<span class="ruby-ivar">@num</span><span class="ruby-operator">/</span><span class="ruby-identifier">com_div</span>
+  <span class="ruby-ivar">@den</span>=<span class="ruby-ivar">@den</span><span class="ruby-operator">/</span><span class="ruby-identifier">com_div</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@num</span>,<span class="ruby-ivar">@den</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">gcd</span>(<span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span>)
+  <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">u</span>.<span class="ruby-identifier">abs</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">abs</span>
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">v</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+    <span class="ruby-identifier">u</span>, <span class="ruby-identifier">v</span> = <span class="ruby-identifier">v</span>, <span class="ruby-identifier">u</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">u</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">num</span>  <span class="ruby-comment"># Se debe invocar al metodo num() para obtener el numerador</span>
+  <span class="ruby-ivar">@num</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">denom</span> <span class="ruby-comment"># Se debe invocar al metodo den() para obtener el denominador</span>
+  <span class="ruby-ivar">@den</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">denomi</span>(<span class="ruby-identifier">var</span>)
+  <span class="ruby-ivar">@den</span>=<span class="ruby-identifier">var</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">nume</span>(<span class="ruby-identifier">var</span>)
+  <span class="ruby-ivar">@num</span>=<span class="ruby-identifier">var</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">mostrar_fraccion</span> <span class="ruby-comment">#Se debe mostar por la consola la fraccion de la forma: a/b, donde a es el numerador y b el denominador</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;(#{@num}/#{@den})&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">flotante</span> <span class="ruby-comment">#Se debe mostar por la consola la fraccion en formato flotante</span>
+  <span class="ruby-identifier">aux</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">/</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">val</span>)   
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reduccion</span>
+  <span class="ruby-comment">#puts self.to_s</span>
+  <span class="ruby-identifier">val</span>.<span class="ruby-identifier">reduccion</span>
+  <span class="ruby-comment">#puts val.to_s</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>()<span class="ruby-operator">==</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span>()) <span class="ruby-operator">&amp;</span> (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>()<span class="ruby-operator">==</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>())
+    <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>(),<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>())
+   <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+   <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">abs</span>                     <span class="ruby-comment"># Se debe calcular el valor absoluto de una fraccion con el metodo abs</span>
+  <span class="ruby-identifier">aux1</span>=((<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>)<span class="ruby-operator">*</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>))
+  <span class="ruby-identifier">aux2</span>=((<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>)<span class="ruby-operator">*</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>))
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reduccion</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@num</span>,<span class="ruby-ivar">@den</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">reciprocal</span>
+  <span class="ruby-identifier">aux</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>()
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nume</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>())
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denomi</span>(<span class="ruby-identifier">aux</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+
+ <span class="ruby-keyword">def</span> <span class="ruby-identifier">opuesto</span>                        <span class="ruby-comment">#  Se debe calcular el opuesto de una fraccion con -</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nume</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span>(<span class="ruby-value">-1</span>))    
+  <span class="ruby-comment">#Comprobamos si denominador y numerador son negativos (-/-)=(+/+).</span>
+  <span class="ruby-keyword">if</span>((<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>()<span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>)<span class="ruby-operator">&amp;</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>()<span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>))
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nume</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span>(<span class="ruby-value">-1</span>))
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denomi</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span><span class="ruby-operator">*</span>(<span class="ruby-value">-1</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">opuesto2</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nume</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span>(<span class="ruby-value">-1</span>))    
+  <span class="ruby-comment">#Comprobamos si denominador y numerador son negativos (-/-)=(+/+).</span>
+  <span class="ruby-keyword">if</span>((<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>()<span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>)<span class="ruby-operator">&amp;</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>()<span class="ruby-operator">&lt;</span><span class="ruby-value">0</span>))
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">nume</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span>(<span class="ruby-value">-1</span>))
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denomi</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span><span class="ruby-operator">*</span>(<span class="ruby-value">-1</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>,<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span>)
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-operator">+</span>(<span class="ruby-identifier">val</span>)   <span class="ruby-comment">#Se debe sumar dos fracciones con + y dar el resultado de forma reducida</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>
+    <span class="ruby-identifier">aux</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span>
+    <span class="ruby-identifier">p3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">aux</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>)
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">numaux</span>=(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>)<span class="ruby-operator">+</span>(<span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>)
+        <span class="ruby-identifier">denaux</span>=(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>)
+        <span class="ruby-identifier">p3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">numaux</span>, <span class="ruby-identifier">denaux</span>)
+  <span class="ruby-keyword">end</span> 
+  <span class="ruby-identifier">p3</span>.<span class="ruby-identifier">reduccion</span>
+  <span class="ruby-identifier">p3</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">def</span> <span class="ruby-operator">-</span>(<span class="ruby-identifier">val</span>)   <span class="ruby-comment">#  Se debe restar dos fracciones con - y dar el resultado de forma reducida</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>
+    <span class="ruby-identifier">aux</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">-</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span>
+        <span class="ruby-identifier">p3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">aux</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>)
+    <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">numaux</span>=(<span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>)<span class="ruby-operator">-</span>(<span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span>)
+        <span class="ruby-identifier">denaux</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>
+        <span class="ruby-identifier">p3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">numaux</span>, <span class="ruby-identifier">denaux</span>)
+  <span class="ruby-keyword">end</span> 
+  <span class="ruby-identifier">p3</span>.<span class="ruby-identifier">reduccion</span>
+  <span class="ruby-identifier">p3</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span>
+
+ <span class="ruby-keyword">def</span> <span class="ruby-operator">*</span>(<span class="ruby-identifier">val</span>)    <span class="ruby-comment">#Se debe multiplicar dos fracciones con * y dar el resultado de forma reducida</span>
+   <span class="ruby-identifier">aux1</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span>
+   <span class="ruby-identifier">aux2</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>
+   <span class="ruby-identifier">f1</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">aux1</span>, <span class="ruby-identifier">aux2</span>)
+   <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">reduccion</span>
+
+ <span class="ruby-keyword">end</span> 
+
+ <span class="ruby-keyword">def</span> <span class="ruby-operator">/</span>(<span class="ruby-identifier">val</span>)           <span class="ruby-comment">#Se debe dividir dos fracciones con / y dar el resultado de forma reducida</span>
+    <span class="ruby-identifier">aux1</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">num</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">denom</span>
+    <span class="ruby-identifier">aux2</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">denom</span><span class="ruby-operator">*</span><span class="ruby-identifier">val</span>.<span class="ruby-identifier">num</span>
+    <span class="ruby-identifier">f1</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">aux1</span>,<span class="ruby-identifier">aux2</span>)
+    <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">reduccion</span>
+    <span class="ruby-identifier">f1</span>.<span class="ruby-identifier">to_s</span>
+ <span class="ruby-keyword">end</span>
+
+ <span class="ruby-keyword">def</span> <span class="ruby-operator">&amp;</span>(<span class="ruby-identifier">val</span>)    <span class="ruby-comment">#Se debe calcular el resto dos fracciones con % y dar el resultado de forma reducida</span>
+   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reduccion</span>
+   <span class="ruby-identifier">val</span>.<span class="ruby-identifier">reduccion</span>
+   <span class="ruby-identifier">temp</span>=<span class="ruby-keyword">self</span>.<span class="ruby-identifier">flotante</span>
+   <span class="ruby-identifier">temp1</span>=<span class="ruby-identifier">val</span>.<span class="ruby-identifier">flotante</span>
+   <span class="ruby-identifier">resto</span>=<span class="ruby-identifier">temp1</span><span class="ruby-operator">%</span><span class="ruby-identifier">temp</span>
+   <span class="ruby-identifier">f3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">resto</span>,<span class="ruby-value">1</span>)    
+ <span class="ruby-keyword">end</span> 
+
+ <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">val</span>)
+    (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">flotante</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">val</span>.<span class="ruby-identifier">flotante</span>)
+ <span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

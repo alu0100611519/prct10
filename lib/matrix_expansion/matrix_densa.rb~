@@ -151,11 +151,7 @@ class MatrizDensa<Matriz
 	  j=0
 	  self.col.times do |j|
 	    if (yield(@valor[i][j]))
-	      puts " FILA "
-	      puts i
-	      puts " COLUMNA" 
-	      puts j
-	      return true
+	      return i,j
 	    end
 	  end
 	  j=j+1

@@ -1,0 +1,27 @@
+Fri, 29 Nov 2013 12:45:54 +0000
+./lib/matrix_expansion.rb~	Fri, 22 Nov 2013 10:05:01 +0000
+./lib/matrix_expansion/gcd.rb	Fri, 22 Nov 2013 00:21:49 +0000
+./lib/matrix_expansion/fraccion.rb~	Thu, 28 Nov 2013 13:14:34 +0000
+./lib/matrix_expansion/fraccion.rb.save	Wed, 27 Nov 2013 13:45:06 +0000
+./lib/matrix_expansion/fraccion.rb	Thu, 28 Nov 2013 13:14:35 +0000
+./lib/matrix_expansion/version.rb	Fri, 22 Nov 2013 00:21:49 +0000
+./lib/matrix_expansion/matrix_densa.rb	Fri, 29 Nov 2013 12:41:00 +0000
+./lib/matrix_expansion/matrix_densa.rb~	Fri, 29 Nov 2013 12:40:59 +0000
+./lib/matrix_expansion/matrix.rb~	Wed, 27 Nov 2013 11:11:18 +0000
+./lib/matrix_expansion/matrix_dispersa.rb~	Thu, 28 Nov 2013 13:06:46 +0000
+./lib/matrix_expansion/matrix_dispersa.rb	Thu, 28 Nov 2013 13:06:47 +0000
+./lib/matrix_expansion/matrix.rb	Wed, 27 Nov 2013 11:11:18 +0000
+./lib/matrix_expansion.rb	Fri, 22 Nov 2013 10:05:02 +0000
+./Guardfile	Fri, 22 Nov 2013 09:52:54 +0000
+./doc/created.rid	Fri, 29 Nov 2013 12:45:54 +0000
+./LICENSE.txt	Thu, 21 Nov 2013 18:25:16 +0000
+./spec/matrix_spec.rb	Fri, 29 Nov 2013 12:30:37 +0000
+./spec/matrix_spec.rb~	Fri, 29 Nov 2013 12:30:36 +0000
+./matrix_expansion.gemspec	Fri, 22 Nov 2013 09:57:10 +0000
+./README.md	Fri, 22 Nov 2013 00:21:49 +0000
+./Gemfile.lock	Fri, 22 Nov 2013 10:06:12 +0000
+./Gemfile	Fri, 22 Nov 2013 09:52:54 +0000
+./Rakefile~	Thu, 21 Nov 2013 18:25:16 +0000
+./Rakefile	Fri, 22 Nov 2013 10:08:38 +0000
+./Guardfile~	Thu, 21 Nov 2013 18:25:16 +0000
+./LICENSE	Fri, 22 Nov 2013 00:21:49 +0000

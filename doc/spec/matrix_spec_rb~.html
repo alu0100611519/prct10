@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>matrix_spec.rb~ - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body class="file">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li class="file"><a href="../Guardfile.html">Guardfile</a>
+  
+    <li class="file"><a href="../Guardfile~.html">Guardfile~</a>
+  
+    <li class="file"><a href="../LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../LICENSE_txt.html">LICENSE</a>
+  
+    <li class="file"><a href="../README_md.html">README</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../Rakefile~.html">Rakefile~</a>
+  
+    <li class="file"><a href="../doc/created_rid.html">created.rid</a>
+  
+    <li class="file"><a href="../lib/matrix_expansion_rb~.html">matrix_expansion.rb~</a>
+  
+    <li class="file"><a href="../lib/matrix_expansion/fraccion_rb_save.html">fraccion.rb.save</a>
+  
+    <li class="file"><a href="../lib/matrix_expansion/fraccion_rb~.html">fraccion.rb~</a>
+  
+    <li class="file"><a href="../lib/matrix_expansion/matrix_rb~.html">matrix.rb~</a>
+  
+    <li class="file"><a href="../lib/matrix_expansion/matrix_densa_rb~.html">matrix_densa.rb~</a>
+  
+    <li class="file"><a href="../lib/matrix_expansion/matrix_dispersa_rb~.html">matrix_dispersa.rb~</a>
+  
+    <li class="file"><a href="../matrix_expansion_gemspec.html">matrix_expansion.gemspec</a>
+  
+    <li class="file"><a href="../spec/matrix_spec_rb~.html">matrix_spec.rb~</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Fraccion.html">Fraccion</a>
+  
+    <li><a href="../MatrixExpansion.html">MatrixExpansion</a>
+  
+    <li><a href="../MatrixExpansion/Matriz.html">MatrixExpansion::Matriz</a>
+  
+    <li><a href="../MatrixExpansion/MatrizDensa.html">MatrixExpansion::MatrizDensa</a>
+  
+    <li><a href="../MatrixExpansion/MatrizDispersa.html">MatrixExpansion::MatrizDispersa</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation" class="description">
+  
+<p>require “./lib/matrix_expansion.rb” include Comparable include Enumerable</p>
+
+<p>describe <a
+href="../MatrixExpansion/Matriz.html">MatrixExpansion::Matriz</a> do</p>
+
+<pre class="ruby"><span class="ruby-identifier">before</span> :<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@M1</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@M1</span>[<span class="ruby-value">0</span>]=[<span class="ruby-value">3</span>,<span class="ruby-value">0</span>]
+    <span class="ruby-ivar">@M1</span>[<span class="ruby-value">1</span>]=[<span class="ruby-value">0</span>,<span class="ruby-value">0</span>]
+    <span class="ruby-ivar">@M1</span>.<span class="ruby-identifier">cv</span>
+    <span class="ruby-ivar">@M2</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDispersa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@M2</span>[<span class="ruby-value">0</span>]=[<span class="ruby-value">3</span>,<span class="ruby-value">0</span>]
+    <span class="ruby-ivar">@M2</span>[<span class="ruby-value">1</span>]=[<span class="ruby-value">0</span>,<span class="ruby-value">0</span>]
+    <span class="ruby-ivar">@M2</span>.<span class="ruby-identifier">cv</span>
+    <span class="ruby-ivar">@Ma</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@Ma</span>[<span class="ruby-value">0</span>]=[<span class="ruby-value">2</span>,<span class="ruby-value">2</span>]
+    <span class="ruby-ivar">@Ma</span>[<span class="ruby-value">1</span>]=[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
+    <span class="ruby-ivar">@Mb</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@Mb</span>[<span class="ruby-value">0</span>]=[<span class="ruby-value">2</span>,<span class="ruby-value">2</span>]
+    <span class="ruby-ivar">@Mb</span>[<span class="ruby-value">1</span>]=[<span class="ruby-value">0</span>,<span class="ruby-value">2</span>]
+    <span class="ruby-ivar">@F1</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@F2</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@F3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@F4</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">1</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@M</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@M</span>[<span class="ruby-value">0</span>]=[<span class="ruby-ivar">@F1</span>,<span class="ruby-ivar">@F2</span>]
+    <span class="ruby-ivar">@M</span>[<span class="ruby-value">1</span>]=[<span class="ruby-ivar">@F3</span>,<span class="ruby-ivar">@f4</span>]
+    <span class="ruby-ivar">@FR1</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@FR2</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@FR3</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@FR4</span>=<span class="ruby-constant">Fraccion</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@Mf</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">Matriz</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">2</span>,<span class="ruby-value">2</span>)
+    <span class="ruby-ivar">@Mf</span>[<span class="ruby-value">0</span>]=[<span class="ruby-ivar">@FR1</span>,<span class="ruby-ivar">@FR2</span>]
+    <span class="ruby-ivar">@Mf</span>[<span class="ruby-value">1</span>]=[<span class="ruby-ivar">@FR3</span>,<span class="ruby-ivar">@fR4</span>]
+
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">describe</span> <span class="ruby-string">&quot; PRUEBA PRACTICA &quot;</span><span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">it</span> <span class="ruby-string">&quot; ENCONTRAR &quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-ivar">@PR</span>=<span class="ruby-constant">MatrixExpansion</span><span class="ruby-operator">::</span><span class="ruby-constant">MatrizDensa</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">3</span>,<span class="ruby-value">3</span>)
+      <span class="ruby-ivar">@PR</span>[<span class="ruby-value">0</span>]=[<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-value">3</span>]
+      <span class="ruby-ivar">@PR</span>[<span class="ruby-value">1</span>]=[<span class="ruby-value">4</span>,<span class="ruby-value">5</span>,<span class="ruby-value">6</span>]
+      <span class="ruby-ivar">@PR</span>[<span class="ruby-value">2</span>]=[<span class="ruby-value">7</span>,<span class="ruby-value">8</span>,<span class="ruby-value">9</span>]
+      <span class="ruby-ivar">@PR</span>.<span class="ruby-identifier">encontrar</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">e</span><span class="ruby-operator">|</span> <span class="ruby-identifier">e</span><span class="ruby-operator">*</span><span class="ruby-identifier">e</span><span class="ruby-operator">&gt;=</span><span class="ruby-value">16</span>}.<span class="ruby-identifier">should</span> <span class="ruby-identifier">eq</span>(<span class="ruby-value">0</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+</pre>
+
+<p>#</p>
+
+<p>#   describe “OPERACIONES MATRICES DISPERSAS” do #       it “SUMA
+DISPERSAS” do #         @M3=MatrixExpansion::MatrizDispersa.new(2,2) #     
+@<a href="http://0">M3</a>=[6,0] #         @<a href="http://1">M3</a>=[0,0]
+#         (@M3==(@M1+@M2)).should eq(true) #       end #       it “RESTA
+DISPERSAS” do #         @M4=MatrixExpansion::MatrizDispersa.new(2,2) #     
+@<a href="http://0">M4</a>=[0,0] #         @<a href="http://1">M4</a>=[0,0]
+#         (@M4==(@M1-@M2)).should eq(true) #       end</p>
+
+<p>#       it “ MULTIPLICACION DISPERSAS” do #        
+@M5=MatrixExpansion::MatrizDispersa.new(2,2) #         @<a
+href="http://0">M5</a>=[9,0] #         @<a href="http://1">M5</a>=[0,0] #  
+(@M5==(@M1*@M2)).should eq(true) #       end #       it “ MAXIMO DISPERSAS”
+do #         @M1.max.should eq(3) #       end #       it “ MINIMO
+DISPERSAS” do #         @M1.min.should eq(3) #       end #    end #</p>
+
+<p># ####################################### PRUEBAS PARA MATRICES DENSAS
+######################################### #</p>
+
+<p>#    describe “OPERACIONES MATRICES DENSAS” do #       it “ SUMA DENSAS” do
+#       @M3=MatrixExpansion::MatrizDensa.new(2,2) #       @<a
+href="http://0">M3</a>=[4,4] #       @<a href="http://1">M3</a>=[0,4] #    
+(@M3==(@Ma+@Mb)).should eq(true) #       end #       it “ RESTA DENSAS” do
+#       @M4=MatrixExpansion::MatrizDensa.new(2,2) #       @<a
+href="http://0">M4</a>=[0,0] #       @<a href="http://1">M4</a>=[0,0] #    
+(@M4==(@Ma-@Mb)).should eq(true) #       end #       it“ MULTIPLICACION
+DENSAS”do #       @M5=MatrixExpansion::MatrizDensa.new(2,2) #       @<a
+href="http://0">M5</a>=[4,8] #       @<a href="http://1">M5</a>=[0,4] #    
+(@M5==(@Ma*@Mb)).should eq(true) #       end #       it “MAXIMO DENSAS” do
+#       @Ma.max.should eq(2) #       end #       it “MINIMO DENSAS” do #   
+@Ma.min.should eq(0) #       end #    end #</p>
+
+<p># ##################################### PRUEBAS PARA MATRICES DENSAS Y
+DISPERSAS ################################ #    describe“OPERACIONES
+MATRICES DENSAS Y DISPERSAS” do #      it “ SUMA DENSA+DISPERSA” do #      
+@Mx=MatrixExpansion::Matriz.new(2,2) #        @<a
+href="http://0">Mx</a>=[5,2] #        @<a href="http://1">Mx</a>=[0,2] #   
+(@Mx==(@Ma+@M1)).should eq(true) #      end #    end</p>
+
+<p>################################## PRUEBA CON FRACCIONES
+###############################</p>
+
+<p>#    describe “ OPERACIONES CON FRACCIONES ” do #      it “ SUMA ” do #    
+@RES=MatrixExpansion::Matriz.new(2,2) #        @<a
+href="http://0">RES</a>=[1,1] #        @<a href="http://1">RES</a>=[1,1] # 
+(@Mf==(@M+@RES)).should eq(false) #      end #    end</p>
+
+<p>end</p>
+
+</div>
+
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 4.0.0.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

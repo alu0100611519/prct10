@@ -157,6 +157,7 @@ class MatrizDensa<Matriz
 	  j=j+1
 	end
 	i=i+1
+	return nil
       end
     
 end
