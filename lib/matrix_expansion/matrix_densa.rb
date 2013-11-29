@@ -143,12 +143,21 @@ class MatrizDensa<Matriz
       min
     end
      
+################################# METODO ENCONTRAR #############################################
     
-############################## METODO COERCE #######################################
-    
-    def coerce(other)
-      [self,other]
-    end
+      def encontrar
+	i=0
+	self.fil.times do |i|
+	  j=0
+	  self.col.times do |j|
+	    if (yield(@valor[i][j]))
+	      return i,j
+	    end
+	  end
+	  j=j+1
+	end
+	i=i+1
+      end
     
 end
 end

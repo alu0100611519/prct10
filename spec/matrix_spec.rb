@@ -37,71 +37,83 @@ describe MatrixExpansion::Matriz do
     end
     
     
-  describe "OPERACIONES MATRICES DISPERSAS" do
-      it "SUMA DISPERSAS" do
-	  @M3=MatrixExpansion::MatrizDispersa.new(2,2)
-	  @M3[0]=[6,0]
-	  @M3[1]=[0,0]
-	  (@M3==(@M1+@M2)).should eq(true)
+    
+    
+    describe " PRUEBA PRACTICA "do
+      it " ENCONTRAR " do
+	@PR=MatrixExpansion::MatrizDensa.new(3,3)
+	@PR[0]=[1,2,3]
+	@PR[1]=[4,5,6]
+	@PR[2]=[7,8,9]
+	@PR.encontrar{|e| e*e>=16}.should eq([1,0])
       end
-      it "RESTA DISPERSAS" do
-	  @M4=MatrixExpansion::MatrizDispersa.new(2,2)
-	  @M4[0]=[0,0]
-	  @M4[1]=[0,0]
-	  (@M4==(@M1-@M2)).should eq(true)
-      end	
-      it " MULTIPLICACION DISPERSAS" do
-	  @M5=MatrixExpansion::MatrizDispersa.new(2,2)
-	  @M5[0]=[9,0]
-	  @M5[1]=[0,0]
-	  (@M5==(@M1*@M2)).should eq(true)
-      end
-      it " MAXIMO DISPERSAS" do
-	  @M1.max.should eq(3)
-      end
-      it " MINIMO DISPERSAS" do
-	  @M1.min.should eq(3)
-      end
-   end
-   
-####################################### PRUEBAS PARA MATRICES DENSAS #########################################
-   
-   describe "OPERACIONES MATRICES DENSAS" do
-      it " SUMA DENSAS" do
-	@M3=MatrixExpansion::MatrizDensa.new(2,2)
-	@M3[0]=[4,4]
-	@M3[1]=[0,4]
-	(@M3==(@Ma+@Mb)).should eq(true)
-      end
-      it " RESTA DENSAS" do
-	@M4=MatrixExpansion::MatrizDensa.new(2,2)
-	@M4[0]=[0,0]
-	@M4[1]=[0,0]
-	(@M4==(@Ma-@Mb)).should eq(true)
-      end
-      it" MULTIPLICACION DENSAS"do
-	@M5=MatrixExpansion::MatrizDensa.new(2,2)
-	@M5[0]=[4,8]
-	@M5[1]=[0,4]
-	(@M5==(@Ma*@Mb)).should eq(true)
-      end
-      it "MAXIMO DENSAS" do
-	@Ma.max.should eq(2)
-      end
-      it "MINIMO DENSAS" do
-	@Ma.min.should eq(0)
-      end
-   end
-   
-##################################### PRUEBAS PARA MATRICES DENSAS Y DISPERSAS ################################
-   describe"OPERACIONES MATRICES DENSAS Y DISPERSAS" do
-     it " SUMA DENSA+DISPERSA" do
-       @Mx=MatrixExpansion::Matriz.new(2,2)
-       @Mx[0]=[5,2]
-       @Mx[1]=[0,2]
-       (@Mx==(@Ma+@M1)).should eq(true)
-     end
-   end
+    end
+#     
+#   describe "OPERACIONES MATRICES DISPERSAS" do
+#       it "SUMA DISPERSAS" do
+# 	  @M3=MatrixExpansion::MatrizDispersa.new(2,2)
+# 	  @M3[0]=[6,0]
+# 	  @M3[1]=[0,0]
+# 	  (@M3==(@M1+@M2)).should eq(true)
+#       end
+#       it "RESTA DISPERSAS" do
+# 	  @M4=MatrixExpansion::MatrizDispersa.new(2,2)
+# 	  @M4[0]=[0,0]
+# 	  @M4[1]=[0,0]
+# 	  (@M4==(@M1-@M2)).should eq(true)
+#       end	
+#       it " MULTIPLICACION DISPERSAS" do
+# 	  @M5=MatrixExpansion::MatrizDispersa.new(2,2)
+# 	  @M5[0]=[9,0]
+# 	  @M5[1]=[0,0]
+# 	  (@M5==(@M1*@M2)).should eq(true)
+#       end
+#       it " MAXIMO DISPERSAS" do
+# 	  @M1.max.should eq(3)
+#       end
+#       it " MINIMO DISPERSAS" do
+# 	  @M1.min.should eq(3)
+#       end
+#    end
+#    
+# ####################################### PRUEBAS PARA MATRICES DENSAS #########################################
+#    
+#    describe "OPERACIONES MATRICES DENSAS" do
+#       it " SUMA DENSAS" do
+# 	@M3=MatrixExpansion::MatrizDensa.new(2,2)
+# 	@M3[0]=[4,4]
+# 	@M3[1]=[0,4]
+# 	(@M3==(@Ma+@Mb)).should eq(true)
+#       end
+#       it " RESTA DENSAS" do
+# 	@M4=MatrixExpansion::MatrizDensa.new(2,2)
+# 	@M4[0]=[0,0]
+# 	@M4[1]=[0,0]
+# 	(@M4==(@Ma-@Mb)).should eq(true)
+#       end
+#       it" MULTIPLICACION DENSAS"do
+# 	@M5=MatrixExpansion::MatrizDensa.new(2,2)
+# 	@M5[0]=[4,8]
+# 	@M5[1]=[0,4]
+# 	(@M5==(@Ma*@Mb)).should eq(true)
+#       end
+#       it "MAXIMO DENSAS" do
+# 	@Ma.max.should eq(2)
+#       end
+#       it "MINIMO DENSAS" do
+# 	@Ma.min.should eq(0)
+#       end
+#    end
+#    
+# ##################################### PRUEBAS PARA MATRICES DENSAS Y DISPERSAS ################################
+#    describe"OPERACIONES MATRICES DENSAS Y DISPERSAS" do
+#      it " SUMA DENSA+DISPERSA" do
+#        @Mx=MatrixExpansion::Matriz.new(2,2)
+#        @Mx[0]=[5,2]
+#        @Mx[1]=[0,2]
+#        (@Mx==(@Ma+@M1)).should eq(true)
+#      end
+#    end
    
 ################################## PRUEBA CON FRACCIONES ###############################   
    

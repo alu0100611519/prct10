@@ -10,6 +10,15 @@ class Fraccion
   def to_s
       "(#{@num}/#{@den})"
   end
+
+
+################################ METODO COERCE ####################################################
+
+  def coerce(other)
+    [Fraccion.new(other,1),self]  
+    end
+
+##################################################################################################
   
   def reduccion
     com_div = gcd(@num,@den)
@@ -100,7 +109,7 @@ class Fraccion
   end
   
   def +(val)   #Se debe sumar dos fracciones con + y dar el resultado de forma reducida
-    self.coerce(val)
+    
       if self.denom == val.denom
       aux=self.num + val.num
       p3=Fraccion.new(aux, self.denom)
@@ -154,21 +163,6 @@ class Fraccion
    def <=>(val)
       (self.flotante <=> val.flotante)
    end
-   ############################## METODO COERCE #######################################
-    
-    def coerce(other)
-    if other.class==Fraccion
-      [self,other]
-    else
-      @A=Fraccion.new(other[0][0],1)
-      @B=Fraccion.new(other[0][1],1)
-      @C=Fraccion.new(other[1][0],1)
-      @D=Fraccion.new(other[1][1],1)
-      other[0]=[@A,@B]
-      other[1]=[@C,@D]                
-    end
-    other
-    end
 end
 
 
